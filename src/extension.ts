@@ -132,7 +132,7 @@ export async function activate() {
 		// Setup server arguments
 		let args_server = [];
 		if (!conf.get<boolean>('includeSymbolMem')) { args_server.push("--symbol_skip_mem") }
-		if (conf.get<boolean>('incrementalSync')) { args_server.push("--incrmental_sync") }
+		if (conf.get<boolean>('incrementalSync')) { args_server.push("--incremental_sync") }
 		if (!conf.get<boolean>('autocompletePrefix')) { args_server.push("--autocomplete_no_prefix") }
 		if (conf.get<boolean>('lowercaseIntrinsics')) { args_server.push("--lowercase_intrinsics") }
 		if (conf.get<boolean>('useSignatureHelp')) { args_server.push("--use_signature_help") }
@@ -201,3 +201,4 @@ export function deactivate(): Thenable<void> {
 	}
 	return Promise.all(promises).then(() => undefined);
 }
+
